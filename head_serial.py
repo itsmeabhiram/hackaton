@@ -4,8 +4,8 @@ import numpy as np
 import time
 import serial
 
-# Initialize PySerial
-esp32_com_port = 'COM12'  # Replace with your ESP32's COM port
+# Initialize pserial
+esp32_com_port = 'COM12'  
 baud_rate = 115200
 ser = serial.Serial(esp32_com_port, baud_rate, timeout=1)
 
