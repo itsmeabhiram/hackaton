@@ -10,7 +10,7 @@ ser = serial.Serial(esp32_com_port, 115200)  # Adjust baud rate as needed
 try:
     while True:
         # Send data
-        ser.write(b"poda patti!\n")  # Sending data with newline for better readability
+        ser.write(b"hello from computer\n")  # Sending data with newline for better readability
         
         # Wait for 1 second
         time.sleep(1)
