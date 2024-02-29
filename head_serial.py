@@ -76,14 +76,17 @@ while cap.isOpened():
                 text = "Forward"
             
             round_y = round(y_angle, 2)
+            round_x = round(x_angle, 2)
+            mode = 1100
 
             if ((time.time() - serial_time) > 0.2):
-                ser.write(str(round_y).encode())
-                ser.write(b"\n")
+                ser.write(f"{round_x},{round_y},{mode}\n".encode())
                 serial_time = time.time()
+
             # Add the text on the image
             cv2.putText(image, text, (20, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
             cv2.putText(image, "x: " + str(round_y), (500, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
+            #cv2.putText(image, "y: " + str(round_x), (500, 400), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
 
         mp_drawing.draw_landmarks(
                     image=image,
